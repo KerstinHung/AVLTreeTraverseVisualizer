@@ -149,7 +149,7 @@ public class AVLTree {
     	// need to modify this section
         if (r != null)
         {
-        	inorder += inorder(r.left) + r.data +" " + r.right;
+        	inorder += inorder(r.left) + r.data +" " + inorder(r.right);
         }
         return inorder;
     }

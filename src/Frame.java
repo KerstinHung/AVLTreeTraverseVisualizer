@@ -111,7 +111,7 @@ public class Frame extends JFrame {
             	avlt.insert(data);
             	preorderTextArea.setText(avlt.preorder());
             	postorderTextArea.setText(avlt.postorder());
-            	inorderTextArea.setText(avlt.postorder());
+            	inorderTextArea.setText(avlt.inorder());
         	}
         	inputField.setText("");
         	countResultLabel.setText(Integer.toString(avlt.countNodes()));
@@ -127,7 +127,7 @@ public class Frame extends JFrame {
         	avlt.makeEmpty();
         	preorderTextArea.setText(avlt.preorder());
         	postorderTextArea.setText(avlt.postorder());
-        	inorderTextArea.setText(avlt.postorder());
+        	inorderTextArea.setText(avlt.inorder());
         	countResultLabel.setText(Integer.toString(avlt.countNodes()));
         	findLabel.setText("false");
         }

@@ -4,33 +4,32 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Frame extends JFrame {
-	private JTextField inputField;
-	private JTextField searchField;
-	private JTextArea preorderTextArea;
-	private JTextArea postorderTextArea;
-	private JTextArea inorderTextArea;
-	private JLabel findLabel;
-	private JLabel insertLabel;
-	private JLabel preorderLabel;
-	private JLabel postorderLabel;
-	private JLabel inorderLabel;
-	private JLabel searchLabel;
-	private JLabel countLabel;
-	private JLabel countResultLabel;
-	private JButton okButton;
-	private JButton cancelButton;
-	private JButton clearAllButton;
-	private JButton searchButton;
+	private JTextField inputField = new JTextField(20);
+	private JTextField searchField = new JTextField();
+	private JTextArea preorderTextArea = new JTextArea();
+	private JTextArea postorderTextArea = new JTextArea();
+	private JTextArea inorderTextArea = new JTextArea();
+	private JLabel findLabel = new JLabel("false");
+	private JLabel insertLabel = new JLabel("Insert");
+	private JLabel preorderLabel = new JLabel("preorder");
+	private JLabel postorderLabel = new JLabel("postorder");
+	private JLabel inorderLabel = new JLabel("inorder");
+	private JLabel searchLabel = new JLabel("search");
+	private JLabel countLabel = new JLabel("count");
+	private JLabel countResultLabel = new JLabel("0");
+	private JButton okButton = new JButton("OK");
+	private JButton cancelButton = new JButton("Cancel");
+	private JButton clearAllButton = new JButton("Clear All");
+	private JButton searchButton = new JButton("Search");
 	
 	// 建立Layout物件
 	GroupLayout layout = new GroupLayout(getContentPane());
 	// 獲取螢幕解析度
     private Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
     // 建立此Frame唯一的AVL Tree
-    private AVLTree avlt;
+    private AVLTree avlt = new AVLTree();
     
 	Frame() {
-        createComponent();
         initListener();
         initView();
     }
@@ -41,30 +40,6 @@ public class Frame extends JFrame {
         this.setSize(dimension.width / 2, dimension.height / 2);
         initLayout();
         this.pack();
-    }
-    private void createComponent(){
-    	inputField = new JTextField(20);
-    	searchField = new JTextField();
-    	
-    	preorderTextArea = new JTextArea();
-    	postorderTextArea = new JTextArea();
-    	inorderTextArea = new JTextArea();
-    	
-    	insertLabel = new JLabel("Insert");
-    	preorderLabel = new JLabel("preorder");
-    	postorderLabel = new JLabel("postorder");
-    	inorderLabel = new JLabel("inorder");
-    	searchLabel = new JLabel("search");
-    	findLabel = new JLabel("false");
-    	countLabel = new JLabel("count");
-    	countResultLabel = new JLabel("0");
-    	
-    	okButton = new JButton("OK");
-    	cancelButton = new JButton("Cancel");
-    	clearAllButton = new JButton("Clear All");
-    	searchButton = new JButton("Search");
-    	
-    	avlt = new AVLTree();
     }
     private void initLayout() {
     	getContentPane().setLayout(layout);

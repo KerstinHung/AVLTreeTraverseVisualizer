@@ -106,15 +106,21 @@ public class Frame extends JFrame {
 	private class insertListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
         	String input = inputField.getText();
-        	if(!input.equals("")) {
-        		int data = Integer.valueOf(input);
-            	avlt.insert(data);
-            	preorderTextArea.setText(avlt.preorder());
-            	postorderTextArea.setText(avlt.postorder());
-            	inorderTextArea.setText(avlt.inorder());
+        	int data = 0;
+        	try {
+        		data = Integer.valueOf(input);
+        		avlt.insert(data);
+                preorderTextArea.setText(avlt.preorder());
+                postorderTextArea.setText(avlt.postorder());
+                inorderTextArea.setText(avlt.inorder());
         	}
-        	inputField.setText("");
-        	countResultLabel.setText(Integer.toString(avlt.countNodes()));
+        	catch(NumberFormatException ex) {
+        		JOptionPane.showMessageDialog(null, "輸入應該為介於-10^9 ~ 10^9之間的整數", "提示", JOptionPane.PLAIN_MESSAGE);
+        	}
+        	finally {
+        		inputField.setText("");
+        		countResultLabel.setText(Integer.toString(avlt.countNodes()));
+        	}
         }
     }
 	private class cancelListener implements ActionListener {

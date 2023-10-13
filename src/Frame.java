@@ -60,12 +60,13 @@ public class Frame extends JFrame {
         	    		.addGroup(layout.createSequentialGroup()
         	    				.addComponent(searchField)
         	    				.addComponent(searchButton)
-        	    				.addComponent(findLabel))
-        	    		)
+        	    				.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+        	    						.addComponent(countButton)
+        	    						.addComponent(findLabel))
+        	    		))
         	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
         	    		.addComponent(okButton)
         	    		.addComponent(cancelButton)
-        	    		.addComponent(countButton)
         	    		.addComponent(clearAllButton))
         	);
         layout.setVerticalGroup(layout.createSequentialGroup()
@@ -87,9 +88,10 @@ public class Frame extends JFrame {
             	    	.addComponent(searchLabel)
             	    	.addComponent(searchField)
             	    	.addComponent(searchButton)
-            	    	.addComponent(findLabel)
-            	    	.addComponent(countButton))
-        	    .addComponent(clearAllButton)
+            	    	.addComponent(findLabel))
+        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+        	    		.addComponent(countButton)
+        	    		.addComponent(clearAllButton))
         	);
     }
     private void initListener() {

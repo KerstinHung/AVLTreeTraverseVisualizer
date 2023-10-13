@@ -15,12 +15,11 @@ public class Frame extends JFrame {
 	private JLabel postorderLabel = new JLabel("postorder");
 	private JLabel inorderLabel = new JLabel("inorder");
 	private JLabel searchLabel = new JLabel("search");
-	private JLabel countLabel = new JLabel("count");
-	private JLabel countResultLabel = new JLabel("0");
 	private JButton okButton = new JButton("OK");
 	private JButton cancelButton = new JButton("Cancel");
 	private JButton clearAllButton = new JButton("Clear All");
 	private JButton searchButton = new JButton("Search");
+	private JButton countButton = new JButton("count");
 	
 	// 建立Layout物件
 	GroupLayout layout = new GroupLayout(getContentPane());
@@ -63,7 +62,6 @@ public class Frame extends JFrame {
         	    				.addComponent(searchField)
         	    				.addComponent(searchButton)
         	    				.addComponent(findLabel))
-        	    		.addComponent(countResultLabel)
         	    		)
         	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
         	    		.addComponent(okButton)
@@ -101,6 +99,7 @@ public class Frame extends JFrame {
     	cancelButton.addActionListener(new cancelListener());
     	clearAllButton.addActionListener(new clearListener());
     	searchButton.addActionListener(new searchListener());
+    	countButton.addActionListener(new countListener());
     }
 
 	private class insertListener implements ActionListener {
@@ -119,7 +118,6 @@ public class Frame extends JFrame {
         	}
         	finally {
         		inputField.setText("");
-        		countResultLabel.setText(Integer.toString(avlt.countNodes()));
         	}
         }
     }
@@ -134,7 +132,6 @@ public class Frame extends JFrame {
         	preorderTextArea.setText(avlt.preorder());
         	postorderTextArea.setText(avlt.postorder());
         	inorderTextArea.setText(avlt.inorder());
-        	countResultLabel.setText(Integer.toString(avlt.countNodes()));
         	findLabel.setText("false");
         }
     }
@@ -154,6 +151,13 @@ public class Frame extends JFrame {
 			}
 			searchField.setText("");
         }
+	}
+	private class countListener implements ActionListener{
+		public void actionPerformed(ActionEvent e) {
+			int nodes = avlt.countNodes();
+			String output = "Number of nodes: " + Integer.toString(nodes);
+			JOptionPane.showMessageDialog(null, output, "Count", JOptionPane.PLAIN_MESSAGE);
+		}
 	}
 
 }

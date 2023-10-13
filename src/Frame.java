@@ -51,8 +51,7 @@ public class Frame extends JFrame {
                 		.addComponent(preorderLabel)
                 		.addComponent(postorderLabel)
                 		.addComponent(inorderLabel)
-                		.addComponent(searchLabel)
-                		.addComponent(countLabel))
+                		.addComponent(searchLabel))
         		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
         				.addComponent(inputField)
                 		.addComponent(preorderTextArea)
@@ -66,6 +65,7 @@ public class Frame extends JFrame {
         	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
         	    		.addComponent(okButton)
         	    		.addComponent(cancelButton)
+        	    		.addComponent(countButton)
         	    		.addComponent(clearAllButton))
         	);
         layout.setVerticalGroup(layout.createSequentialGroup()
@@ -87,11 +87,9 @@ public class Frame extends JFrame {
             	    	.addComponent(searchLabel)
             	    	.addComponent(searchField)
             	    	.addComponent(searchButton)
-            	    	.addComponent(findLabel))
-        	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-            	    	.addComponent(countLabel)
-            	    	.addComponent(countResultLabel)
-            	    	.addComponent(clearAllButton))
+            	    	.addComponent(findLabel)
+            	    	.addComponent(countButton))
+        	    .addComponent(clearAllButton)
         	);
     }
     private void initListener() {

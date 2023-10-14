@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\USER\Desktop\Software engineering practices\AVLTreeTraverseVisualizer\AVL Tree Traverse Visualizer.jar</jar>
-  <outfile>C:\Users\USER\Desktop\Software engineering practices\AVLTreeTraverseVisualizer\AVL Tree Traverse Visualizer.exe</outfile>
+  <outfile>C:\Users\USER\Desktop\Software engineering practices\AVLTreeTraverseVisualizer\AVLTreeTraverseVisualizer.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
@@ -16,10 +16,9 @@
   <icon></icon>
   <classPath>
     <mainClass>org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader</mainClass>
-    <cp>.</cp>
   </classPath>
   <jre>
-    <path>%JAVA_HOME%;%PATH%</path>
+    <path>AVLTreeTraverseVisualizer\jre</path>
     <requiresJdk>false</requiresJdk>
     <requires64Bit>false</requires64Bit>
     <minVersion></minVersion>

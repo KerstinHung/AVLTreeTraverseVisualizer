@@ -67,7 +67,7 @@ public class Frame extends JFrame {
         	    		.addComponent(cancelButton)
         	    		.addComponent(countButton)
         	    		.addComponent(clearAllButton))
-        	);
+        	)
         layout.setVerticalGroup(layout.createSequentialGroup()
         	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
         	        .addComponent(insertLabel)
@@ -87,8 +87,7 @@ public class Frame extends JFrame {
             	    	.addComponent(searchLabel)
             	    	.addComponent(searchField)
             	    	.addComponent(searchButton)
-            	    	.addComponent(findLabel)
-            	    	.addComponent(countButton))
+            	    	.addComponent(findLabel))
         	    .addComponent(clearAllButton)
         	);
     }
@@ -103,7 +102,7 @@ public class Frame extends JFrame {
 	private class insertListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
         	String input = inputField.getText();
-        	int data = 0;
+        	int data;
         	try {
         		data = Integer.valueOf(input);
         		avlt.insert(data);

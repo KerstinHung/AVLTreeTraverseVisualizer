@@ -3,6 +3,7 @@ public class AVLNode {
     AVLNode left, right;
     int data;
     int height;
+    int nodeID;
 
     /* Constructor */
     public AVLNode()

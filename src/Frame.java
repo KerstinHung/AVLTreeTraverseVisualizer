@@ -102,7 +102,7 @@ public class Frame extends JFrame {
 	private class insertListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
         	String input = inputField.getText();
-        	int data;
+        	int data = 0;
         	try {
         		data = Integer.valueOf(input);
         		avlt.insert(data);

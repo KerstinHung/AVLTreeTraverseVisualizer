@@ -67,7 +67,7 @@ public class Frame extends JFrame {
         	    		.addComponent(cancelButton)
         	    		.addComponent(countButton)
         	    		.addComponent(clearAllButton))
-        	)
+        	);
         layout.setVerticalGroup(layout.createSequentialGroup()
         	    .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
         	        .addComponent(insertLabel)

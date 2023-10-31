@@ -88,6 +88,7 @@ public class Frame extends JFrame {
             	    	.addComponent(searchField)
             	    	.addComponent(searchButton)
             	    	.addComponent(findLabel))
+			.addComponent(countButton)
         	    .addComponent(clearAllButton)
         	);
     }

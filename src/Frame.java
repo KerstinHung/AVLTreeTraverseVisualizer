@@ -93,14 +93,14 @@ public class Frame extends JFrame {
         	);
     }
     private void initListener() {
-    	okButton.addActionListener(new insertListener());
-    	cancelButton.addActionListener(new cancelListener());
-    	clearAllButton.addActionListener(new clearListener());
-    	searchButton.addActionListener(new searchListener());
-    	countButton.addActionListener(new countListener());
+    	okButton.addActionListener(new InsertListener());
+    	cancelButton.addActionListener(new CancelListener());
+    	clearAllButton.addActionListener(new ClearListener());
+    	searchButton.addActionListener(new SearchListener());
+    	countButton.addActionListener(new CountListener());
     }
 
-	private class insertListener implements ActionListener {
+	private class InsertListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
         	String input = inputField.getText();
         	int data = 0;
@@ -119,12 +119,12 @@ public class Frame extends JFrame {
         	}
         }
     }
-	private class cancelListener implements ActionListener {
+	private class CancelListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
         	inputField.setText("");
         }
     }
-	private class clearListener implements ActionListener {
+	private class ClearListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
         	avlt.makeEmpty();
         	preorderTextArea.setText(avlt.preorder());
@@ -133,7 +133,7 @@ public class Frame extends JFrame {
         	findLabel.setText("false");
         }
     }
-	private class searchListener implements ActionListener{
+	private class SearchListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			String input = searchField.getText();
 			boolean flag = false;
@@ -150,7 +150,7 @@ public class Frame extends JFrame {
 			searchField.setText("");
         }
 	}
-	private class countListener implements ActionListener{
+	private class CountListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			int nodes = avlt.countNodes();
 			String output = "Number of nodes: " + Integer.toString(nodes);
